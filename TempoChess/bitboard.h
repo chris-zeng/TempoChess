@@ -27,10 +27,21 @@ namespace BitBoards{
 	constexpr Bitboard Rank7BB = 0xFFULL<<48;
 	constexpr Bitboard Rank8BB = 0xFFULL<<56;
 
-	constexpr Bitboard WhiteKingBB = 0x10ULL;
-	constexpr Bitboard BlackKingBB = 0x1000000000000000ULL;
+	Bitboard w_pawn = 0xFF00ULL;
+	Bitboard w_knight = 0x42ULL;
+	Bitboard w_bishop = 0x24ULL;
+	Bitboard w_rook = 0x81ULL;
+	Bitboard w_queen = 0x8ULL;
+	Bitboard w_king = 0x10ULL;
+	Bitboard w_occupied = 0xFFFFULL;
 
-
+	Bitboard b_pawn = 0xFF000000000000ULL;
+	Bitboard b_knight = 0x4200000000000000ULL;
+	Bitboard b_bishop = 0x2400000000000000ULL;
+	Bitboard b_rook = 0x8100000000000000ULL;
+	Bitboard b_queen = 0x1000000000000000ULL;
+	Bitboard b_king = 0x1000000000000000ULL;
+	Bitboard b_occupied = 0xFFFF000000000000ULL;
 
 }
 

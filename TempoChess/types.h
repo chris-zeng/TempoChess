@@ -5,30 +5,21 @@
 
 typedef uint64_t Bitboard;
 
-enum PieceType : int{
-	NO_PIECE_TYPE,
-	PAWN,
-	KNIGHT,
-	BISHOP,
-	ROOK,
-	QUEEN,
-	KING,
+enum PieceType {
+	NO_PIECE_TYPE, PAWN, KNIGHT, BISHOP, ROOK, QUEEN, KING,
+	ALL_PIECES = 0,
+	PIECE_TYPE_NB = 8
 };
 
-enum Piece : int {
+enum Piece {
 	NO_PIECE,
-	W_PAWN,
-	W_KNIGHT,
-	W_BISHOP,
-	W_QUEEN,
-	W_KING,
-	B_PAWN,
-	B_KNIGHT,
-	B_BISHOP,
-	B_QUEEN,
-	B_KING
+	W_PAWN = 1, W_KNIGHT, W_BISHOP, W_ROOK, W_QUEEN, W_KING,
+	B_PAWN = 9, B_KNIGHT, B_BISHOP, B_ROOK, B_QUEEN, B_KING,
+	PIECE_NB = 16
 };
 
+const Piece Pieces[] = { W_PAWN, W_KNIGHT, W_BISHOP, W_ROOK, W_QUEEN, W_KING,
+B_PAWN, B_KNIGHT, B_BISHOP, B_ROOK, B_QUEEN, B_KING };
 
 enum Square : int {
 	SQ_A1, SQ_B1, SQ_C1, SQ_D1, SQ_E1, SQ_F1, SQ_G1, SQ_H1,
@@ -39,14 +30,15 @@ enum Square : int {
 	SQ_A6, SQ_B6, SQ_C6, SQ_D6, SQ_E6, SQ_F6, SQ_G6, SQ_H6,
 	SQ_A7, SQ_B7, SQ_C7, SQ_D7, SQ_E7, SQ_F7, SQ_G7, SQ_H7,
 	SQ_A8, SQ_B8, SQ_C8, SQ_D8, SQ_E8, SQ_F8, SQ_G8, SQ_H8,
-	SQ_NONE,
-
+	SQ_NONE,	
 	SQUARE_NB = 64,
+};
 
+enum Direction : int {
 	NORTH = 8,
 	EAST = 1,
-	SOUTH = -8,
-	WEST = -1,
+	SOUTH = -NORTH,
+	WEST = -EAST,
 
 	NORTH_EAST = NORTH + EAST,
 	SOUTH_EAST = SOUTH + EAST,
@@ -73,5 +65,21 @@ enum Direction : int {
 	SOUTH_WEST = SOUTH + WEST,
 	NORTH_WEST = NORTH + WEST
 };
+
+enum Color {
+	WHITE, BLACK, COLOR_NB = 2
+};
+
+#define ENABLE_INCR_OPERATORS_ON(T)                                \
+inline T& operator++(T& d) { return d = T(int(d) + 1); }           \
+inline T& operator--(T& d) { return d = T(int(d) - 1); }
+
+ENABLE_INCR_OPERATORS_ON(PieceType)
+ENABLE_INCR_OPERATORS_ON(Piece)
+ENABLE_INCR_OPERATORS_ON(Color)
+ENABLE_INCR_OPERATORS_ON(Square)
+ENABLE_INCR_OPERATORS_ON(File)
+ENABLE_INCR_OPERATORS_ON(Rank)
+
 
 #endif TYPES_H_HEADER
