@@ -39,6 +39,19 @@ enum Square : int {
 	SQ_A6, SQ_B6, SQ_C6, SQ_D6, SQ_E6, SQ_F6, SQ_G6, SQ_H6,
 	SQ_A7, SQ_B7, SQ_C7, SQ_D7, SQ_E7, SQ_F7, SQ_G7, SQ_H7,
 	SQ_A8, SQ_B8, SQ_C8, SQ_D8, SQ_E8, SQ_F8, SQ_G8, SQ_H8,
+	SQ_NONE,
+
+	SQUARE_NB = 64,
+
+	NORTH = 8,
+	EAST = 1,
+	SOUTH = -8,
+	WEST = -1,
+
+	NORTH_EAST = NORTH + EAST,
+	SOUTH_EAST = SOUTH + EAST,
+	SOUTH_WEST = SOUTH + WEST,
+	NORTH_WEST = NORTH + WEST
 };
 
 enum File : int {

@@ -27,6 +27,8 @@ namespace BitBoards{
 	constexpr Bitboard Rank7BB = 0xFFULL<<48;
 	constexpr Bitboard Rank8BB = 0xFFULL<<56;
 
+	constexpr Bitboard WhiteKingBB = 0x10ULL;
+	constexpr Bitboard BlackKingBB = 0x1000000000000000ULL;
 
 
 
