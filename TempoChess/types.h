@@ -1,6 +1,7 @@
+#ifndef TYPES_H_INCLUDED
+#define TYPES_H_INCLUDED
 #pragma once
-#ifndef TYPES_H_HEADER
-#define TYPES_H_HEADER
+
 #include <stdint.h> 
 
 typedef uint64_t Bitboard;
@@ -54,18 +55,6 @@ enum Rank : int {
 	RANK_1, RANK_2, RANK_3, RANK_4, RANK_5, RANK_6, RANK_7, RANK_8
 };
 
-enum Direction : int {
-	NORTH = 8,
-	EAST = 1,
-	SOUTH = -NORTH,
-	WEST = -EAST,
-
-	NORTH_EAST = NORTH + EAST,
-	SOUTH_EAST = SOUTH + EAST,
-	SOUTH_WEST = SOUTH + WEST,
-	NORTH_WEST = NORTH + WEST
-};
-
 enum Color {
 	WHITE, BLACK, COLOR_NB = 2
 };
@@ -85,5 +74,4 @@ constexpr Square make_square(File f, Rank r) {
 	return Square((r << 3) + f);
 }
 
-
-#endif TYPES_H_HEADER
+#endif

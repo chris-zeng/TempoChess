@@ -1,7 +1,6 @@
-#pragma once
 #ifndef BITBOARD_H_INCLUDED
 #define BITBOARD_H_INCLUDED
-
+#pragma once
 #include "types.h"
 
 namespace BitBoards{
@@ -42,7 +41,6 @@ namespace BitBoards{
 	Bitboard b_queen = 0x1000000000000000ULL;
 	Bitboard b_king = 0x1000000000000000ULL;
 	Bitboard b_occupied = 0xFFFF000000000000ULL;
-
 }
 
-#endif BITBOARD_H_INCLUDED
+#endif
