@@ -2,15 +2,16 @@
 #include "types.h"
 
 #include <iostream>
-#include <string>
 
 namespace Utility {
-	void Utility::pretty(const Bitboard bitboard){
-		std::string board_representation("");
-		for (Rank r = RANK_1; r <= RANK_8; r++) {
-			for (File f = FILE_A; f <= FILE_H; f++) {
-
-			}
+	const std::string Utility::pretty(const Bitboard b) {
+		std::string s = "+---+---+---+---+---+---+---+---+\n";
+		for (Rank r = RANK_8; r >= RANK_1; --r)	{
+			for (File f = FILE_A; f <= FILE_H; ++f)
+				s += b & make_square(f, r) ? "| X " : "|   ";
+			s += "|\n+---+---+---+---+---+---+---+---+\n";
 		}
+
+		return s;
 	}
 }

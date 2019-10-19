@@ -81,5 +81,9 @@ ENABLE_INCR_OPERATORS_ON(Square)
 ENABLE_INCR_OPERATORS_ON(File)
 ENABLE_INCR_OPERATORS_ON(Rank)
 
+constexpr Square make_square(File f, Rank r) {
+	return Square((r << 3) + f);
+}
+
 
 #endif TYPES_H_HEADER
