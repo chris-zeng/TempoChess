@@ -1,14 +1,21 @@
 #include "bitboard.h"
 
 Bitboard w_pawn;
+Bitboard w_knight;
+Bitboard w_bishop;
+Bitboard w_rook;
+Bitboard w_queen;
+Bitboard w_king;
+Bitboard w_occupied;
 Bitboard b_pawn;
-Bitboard b_rook; 
+Bitboard b_knight;
+Bitboard b_bishop;
+Bitboard b_rook;
+Bitboard b_queen;
+Bitboard b_king;
+Bitboard b_occupied;
 
 void BitBoards::init() {
-	w_pawn = 0xFF00ULL;
-	b_pawn = 0xFF000000000000ULL;
-	b_rook = 0x8100000000000000;
-	/*
 	w_pawn = 0xFF00ULL;
 	w_knight = 0x42ULL;
 	w_bishop = 0x24ULL;
@@ -23,5 +30,4 @@ void BitBoards::init() {
 	b_queen = 0x1000000000000000ULL;
 	b_king = 0x1000000000000000ULL;
 	b_occupied = 0xFFFF000000000000ULL;
-	*/
 }

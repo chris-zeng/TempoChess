@@ -4,8 +4,10 @@
 const std::string Utility::pretty(const Bitboard b) {
 	std::string s = "+---+---+---+---+---+---+---+---+\n";
 	for (Rank r = RANK_8; r >= RANK_1; --r)	{
-		for (File f = FILE_A; f <= FILE_H; ++f)
-			s += b & make_square(f, r) ? "| X " : "|   ";
+		for (File f = FILE_A; f <= FILE_H; ++f) {
+			std::cout << make_square(f, r) << std::endl;
+			s += b & (1 << make_square(f, r)) ? "| X " : "|   ";
+		}
 		s += "|\n+---+---+---+---+---+---+---+---+\n";
 	}
 	return s;
