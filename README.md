@@ -1,5 +1,7 @@
 # TempoChess
 
-Chess Engine that will rival Stockfish using a combination of classical evaluation and ML methods.
+A personal academic project of mine to develop a GM level engine. 
 
 Currently works on Little Endian x64 processors only.
+
+Project currently put on hold.
